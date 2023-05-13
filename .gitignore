@@ -1,0 +1,5 @@
+# Ignore DS_Store files in gitignore
+.DS_Store
+*/.DS_Store
+
+
