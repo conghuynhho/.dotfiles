@@ -1,7 +1,7 @@
 autoload -U add-zsh-hook
 
 load-nvmrc() {
-  local node_version="$(nvm version)"
+  local node_version="$(nvm version | sed 's/v//')"
   local nvmrc_path="$(nvm_find_nvmrc)"
   local package_node_version=null
   local package_json_path="./package.json"
@@ -14,17 +14,19 @@ load-nvmrc() {
   # check nvmrc_path is exist
   if [ -n "$nvmrc_path" ]; then
     local node_version_nvmrc=$(cat "${nvmrc_path}")
-    local nvmrc_node_version=$(nvm version "$node_version_nvmrc")
+    local nvmrc_node_version=$(nvm version "$node_version_nvmrc" | sed 's/v//')
 
     if [ "$nvmrc_node_version" = "N/A" ]; then
-      echo "Target node version is not installed. Installing $node_version_nvmrc"
+      echo "${WARNING}Warning:${NC} Target node version is not installed. Installing ${BLUE}$node_version_nvmrc${NC}...}"
       nvm install
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      echo "Switching to node version in nvmrc: $nvmrc_node_version"
+      echo "${BLUE}Switching${NC} to node version in ${YELLOW}nvmrc${NC}: ${SUCCESS}$nvmrc_node_version${NC}"
       nvm use
     fi
   elif [ "$package_node_version" != null ] && [ "$package_node_version" != "$node_version" ]; then
-    echo "Switching to Node.js version specified in package.json: $package_node_version"
+    # echo "🚀 ~ file: nvm.zshrc:27 ~ package_node_version: $package_node_version"
+    # echo "🚀 ~ file: nvm.zshrc:27 ~ node_version: $node_version"
+    echo "${BLUE}Switching${NC} to Node.js version specified in ${YELLOW}package.json${NC}: ${SUCCESS}$package_node_version${NC}"
     nvm use "$package_node_version"
   # elif [ "$node_version" != "$(nvm version default)" ]; then
   #   echo "Reverting to nvm default version"
