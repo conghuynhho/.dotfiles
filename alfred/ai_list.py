@@ -42,7 +42,7 @@ ai_tools = [
     {
         'title': 'Blackbox AI',
         'subtitle': 'Blackbox AI',
-        'arg': 'https://www.useblackbox.io/home-chat',
+        'arg': 'https://www.useblackbox.io/chat',
         'type': 'file',
         'browser': 'default',
         'icon': {

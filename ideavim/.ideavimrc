@@ -67,6 +67,7 @@ vmap <leader>cy "+y
 vmap <leader>cd "+d
 nmap <leader>cy "+yy
 nmap <leader>cP "+P
+nmap <leader>cP "+P
 nmap <leader>cp "+p
 vmap <leader>cp "+p
 vmap <leader>cP "+P
@@ -105,6 +106,10 @@ nmap <leader>F <Plug>(easymotion-bd-W)
 nmap <leader>j <Plug>(easymotion-jumptoanywhere)
 nmap <leader>a <Plug>(easymotion-bd-e)
 
+xnoremap H ^
+xnoremap L $
+nnoremap H ^
+nnoremap L $
 
 " navigate between split editor
 nmap <C-j> <C-w>j<C-w>_
