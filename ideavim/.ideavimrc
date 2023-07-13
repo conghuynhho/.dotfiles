@@ -36,7 +36,6 @@ set selectmode=mouse,key,ideaselection
 set keymodel=startsel
 set showmode
 
-
 set ideajoin
 set surround
 set easymotion
@@ -49,6 +48,10 @@ set noerrorbells
 let mapleader = " "
 
 "noremap <Esc> <nop>
+
+" Have j and k navigate visual lines rather than logical ones
+nmap j gj
+nmap k gk
 
 "New line shortcut"
 nnoremap <C-S-Enter> O<Esc>
@@ -71,8 +74,7 @@ nmap <leader>cP "+P
 nmap <leader>cp "+p
 vmap <leader>cp "+p
 vmap <leader>cP "+P
-
-" need shortcut to delete without yank
+nmap <leader><esc> :noh<CR>
 
 " scrolling
 "nmap <leader>d <C-d>
@@ -86,6 +88,7 @@ nmap <leader>l <action>(NextTab)
 nmap <leader>bd <action>(CloseEditor)
 nmap <leader>i <action>(Generate)
 nmap <leader>m <action>(Git.Menu)
+nmap <leader>; <action>(ShowPopupMenu)
 "nmap <leader>s <action>(QuickChangeScheme)
 nmap <leader>s\ <action>(MoveTabRight)
 nmap <leader>s| <action>(MoveTabRight)
@@ -106,10 +109,13 @@ nmap <leader>F <Plug>(easymotion-bd-W)
 nmap <leader>j <Plug>(easymotion-jumptoanywhere)
 nmap <leader>a <Plug>(easymotion-bd-e)
 
-xnoremap H ^
-xnoremap L $
-nnoremap H ^
-nnoremap L $
+xnoremap <c-s-H> ^
+xnoremap <c-s-L> $
+nnoremap <c-s-H> ^
+nnoremap <c-s-L> $
+
+nmap L <action>(NextTab)
+nmap H <action>(PreviousTab)
 
 " navigate between split editor
 nmap <C-j> <C-w>j<C-w>_
@@ -145,6 +151,18 @@ nnoremap <C-n> :action GotoClass<CR>
 snoremap <Tab> :action EditorIndentLineOrSelection<CR>
 vnoremap <Tab> :action EditorIndentLineOrSelection<CR>
 vnoremap <S-Tab> :action EditorUnindentSelection<CR>
+
+" Tab navigation
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 :action GoToLastTab<CR>
 
 "Increment and decrement
 noremap + <C-a>
