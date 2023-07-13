@@ -29,13 +29,11 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border --preview "bat --color=always --style=header,grid --line-range :500 {}"'
 
-# set development variables in your .zprofile
-export ENV=local
-export GIT_ACCESS_TOKEN=5845d4065c1f2346d945864c9ad94a2d54021652
-export AWS_ACCESS_KEY_ID=AKIA25ZRGHUOK3773MHR
-export AWS_SECRET_ACCESS_KEY=ZFQnEHIL3kTYs5IxfAs+UES2fd8pn+Zxbapn38h2
-export AWS_DEFAULT_REGION=ap-northeast-1
-export AWS_REGION=ap-northeast-1
+
+# Private environment
+source $WORKDIR/.ggj-config/.zprofile_ggj
+
+# editor
 export EDITOR=nvim
 export CODE=code-insiders
 
