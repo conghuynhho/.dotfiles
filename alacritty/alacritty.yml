@@ -5,6 +5,7 @@ window:
   decorations: buttonless
   opacity: 1
   dynamic_title: false
+  option_as_alt: Both
 scrolling:
   history: 10000
   multiplier: 3

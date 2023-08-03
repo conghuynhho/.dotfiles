@@ -17,8 +17,8 @@ plugins=(git copypath zsh-syntax-highlighting zsh-autosuggestions vi-mode)
 source $ZSH/oh-my-zsh.sh
 eval "$(zoxide init --cmd cd zsh)"
 
-######## ZSH configuration
 HISTFILE=~/.zsh_history
+######## ZSH configuration
 HISTSIZE=100000000
 SAVEHIST=100000000
 setopt INC_APPEND_HISTORY
@@ -48,6 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 #### Git (plugin git of oh-my-zsh)
 alias gs="git status"
 alias go="git checkout"
+alias opengh="openGithubRepo"
 # gl = git pull
 # gp = git push
 
@@ -57,6 +58,13 @@ alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-session -a"
 alias tma="tmux attach"
 alias tmd="tmux detach"
+
+#### yabai
+alias yabs="yabai --start-service"
+alias yabr="yabai --restart-service"
+alias yabd="yabai --stop-service"
+alias yabu="yabai --uninstall-service"
+alias yabi="yabai --install-service"
 
 #### Navigation
 alias bd="cd .."
@@ -71,6 +79,7 @@ alias dd="cd $dotdirs"
 alias ec="vi ~/.zshrc"
 alias ep="vi ~/.zprofile"
 alias gec="vi $WORKDIR/configs.gogojungle.co.jp/packages/.dotfiles/ggj.zshrc"
+alias gep="vi $WORKDIR/.ggj-config/.zprofile_ggj"
 alias reload="source ~/.zshrc && source ~/.zprofile"
 
 #### Shortcuts
@@ -193,4 +202,4 @@ cpbranch() {
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # source $pdir/.dotfiles/zsh/nvm.zsh
-# source $pdir/.dotfiles/zsh/nvm.zshrc
+source $pdir/.dotfiles/zsh/nvm.zshrc
