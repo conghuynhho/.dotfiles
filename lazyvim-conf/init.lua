@@ -1,0 +1,1 @@
+/Users/huynh/.config/nvim/init.lua
