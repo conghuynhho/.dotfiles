@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local Util = require("lazyvim.util")
+-- local Util = require("lazyvim.util")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -27,9 +27,13 @@ vim.keymap.set("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { sile
 
 -- Terminal Keymaps
 -- using option+` to toggle terminal instead of ctrl+/ of default lazyvim
-local lazyterm = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
-end
+-- local lazyterm = function()
+--   Util.float_term(nil, { cwd = Util.get_root() })
+-- end
+--
+-- map("n", "<M-`>", lazyterm, { desc = "Terminal (root dir)" })
+-- map("t", "<M-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+--
 
-map("n", "<M-`>", lazyterm, { desc = "Terminal (root dir)" })
-map("t", "<M-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+vim.keymap.del("n", "<c-/>")
+vim.keymap.del("t", "<C-/>")
