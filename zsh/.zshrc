@@ -49,8 +49,13 @@ export NVM_DIR="$HOME/.nvm"
 alias gs="git status"
 alias go="git checkout"
 alias opengh="openGithubRepo"
+
 # gl = git pull
 # gp = git push
+alias gitFilterRepo="git filter-repo --to-subdirectory-filter"
+alias gitroot='cd $(git rev-parse --show-toplevel)'
+
+
 
 #### Tmux
 alias tml="tmux list-sessions"
@@ -82,11 +87,19 @@ alias gec="vi $WORKDIR/configs.gogojungle.co.jp/packages/.dotfiles/ggj.zshrc"
 alias gep="vi $WORKDIR/.ggj-config/.zprofile_ggj"
 alias reload="source ~/.zshrc && source ~/.zprofile"
 
+#### Docker
+alias drr='docker start "$(docker ps -q -l)"'
+alias dar='docker attach "$(docker ps -q -l)"' # reattach the terminal & stdin"
+
 #### Shortcuts
 alias vi="nvim"
+# alias svi="sudo nvim"
 alias getip="ifconfig | grep 'inet'"
 alias gkeys="cat > /dev/null" # get keystroke for escape sequense.
 alias wifi="sh $hdir/wifi.sh"
+alias checksizeLinux="du -h --max-depth=1"
+alias checksize="du -hcd 1"
+alias checksizeSort="du -hcd 1 | sort -hr"
 alias pn="pnpm"
 alias gs="git status"
 alias vif="vi \$(fzf)" # open vim through fzf
@@ -109,6 +122,7 @@ acbb() { aws codebuild start-build --project-name ggj-stg-build-$1 --no-cli-page
 checkport() {
   sudo lsof -i tcp:"$1"
 }
+# kp() {kill -9 $(lsof -ti:$1)}
 cpyp() {
   # get previous command
   local cmd=$(fc -ln -1 | tail -n 1)
@@ -131,14 +145,33 @@ appendProfile() {
 ggjcps() {
   local input=$1
   local ticket
-  # check if input include 'OAM-'
-  if [[ $input =~ ^OAM- ]]; then
+  # check if input include 'OAM-' and $2 is '--n'
+  if [[ $input == OAM-* ]] || [[ $2 == "--n" ]]; then
     ticket=$input
   else
     ticket="OAM-$input"
   fi
   git fetch
   git checkout -b $ticket origin/staging
+}
+ggjmpre() {
+  local branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+  # Check if both user input and the current branch name are empty
+  if [ -z "$1" ] && [ -z "$branch_name" ]; then
+    echo "Error: No branch name provided, and unable to determine the current branch name."
+    return
+  fi
+
+  # If user input is empty, use the current branch name
+  if [ -z "$1" ]; then
+    echo "Merge pre-staging with current branch: $branch_name"
+  else
+    branch_name=$1
+    echo "Merge pre-staging with branch: $branch_name"
+  fi
+
+  git ggjmpre "$branch_name"
 }
 mkdircd() {
   mkdir -p "$@" && eval cd "\"\$$#\"";
@@ -172,9 +205,10 @@ bindkey -s '^[b' 'cd .. \n'
 # zle -N git-commit-current-branch
 bindkey '^[n' git-commit-ps-current-branch
 
-# TODO: correct this
-bindkey '^n' history-search-forward
-bindkey '^p' history-search-backward
+# zle -al to show all key binding (widgets)
+
+bindkey '^n' history-beginning-search-forward
+bindkey '^p' history-beginning-search-backward
 bindkey '^[l' clear-screen
 
 
