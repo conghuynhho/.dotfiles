@@ -7,6 +7,17 @@ import sys
 # AI tools URL list
 ai_tools = [
     {
+        'title': 'Service Space AI',
+        'subtitle': 'Service Space AI',
+        'arg': 'https://ai.servicespace.org/chat/',
+        'type': 'file',
+        'browser': 'default',
+        'icon': {
+            'path': '',
+            'type': 'default'
+        }
+    },
+    {
         'title': 'ChatGPT',
         'subtitle': 'Chat GPT OpenAI',
         'arg': 'https://chat.openai.com/',
