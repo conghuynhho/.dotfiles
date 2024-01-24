@@ -11,19 +11,34 @@ scrolling:
   multiplier: 3
 
 font:
+  # normal:
+  #   family: Liga SFMono Nerd Font
+  #   style: Regular
+  # bold:
+  #   family: Liga SFMono Nerd Font
+  #   style: Bold
+  #
+  # italic:
+  #   family: Liga SFMono Nerd Font
+  #   style: Italic
+  # bold_italic:
+  #   family: Liga SFMono Nerd Font
+  #   style: Bold Italic
+
   normal:
-    family: Liga SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
   bold:
-    family: Liga SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   italic:
-    family: Liga SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
   bold_italic:
-    family: Liga SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
+
   size: 16.0
   offset:
     x: 1

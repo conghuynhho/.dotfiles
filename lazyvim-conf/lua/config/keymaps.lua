@@ -35,5 +35,5 @@ vim.keymap.set("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { sile
 -- map("t", "<M-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 --
 
-vim.keymap.del("n", "<c-/>")
-vim.keymap.del("t", "<C-/>")
+-- vim.keymap.del("n", "<c-/>")
+-- vim.keymap.del("t", "<C-/>")
