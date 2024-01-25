@@ -1,3 +1,7 @@
+emulate sh
+source ~/.profile
+emulate zsh
+
 
 
 # Added by Toolbox App
