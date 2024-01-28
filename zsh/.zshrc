@@ -61,6 +61,7 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias tml="tmux list-sessions"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-session -a"
+alias tmks="tmux kill-server"
 alias tma="tmux attach"
 alias tmd="tmux detach"
 
