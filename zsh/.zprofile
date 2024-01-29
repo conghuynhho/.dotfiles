@@ -17,7 +17,7 @@ export pdir=/Users/huynh/Personal
 export wd=/Users/huynh/GGJ
 export WORKDIR=/Users/huynh/GGJ
 export tmp=/Users/huynh/Downloads/temp
-export dotdir=/Users/huynh/Personal/.dotfiles/
+export dotdir=/Users/huynh/Personal/.dotfiles
 # export TERM=screen-256color
 export TERM=xterm-256color
 # export tmux_dir=/Users/huynh/Personal/.dotfiles/tmux/
@@ -71,7 +71,7 @@ export MANPATH="/opt/local/share/man:$MANPATH"
 # Tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
-export TMUXIFIER_LAYOUT_PATH="$WORKDIR/configs.gogojungle.co.jp/packages/.dotfiles/tmuxifier-layouts"
+export TMUXIFIER_LAYOUT_PATH="$dotdir/tmuxifier-layouts"
 
 # Flutter
 export PATH="$PATH:/Users/huynh/GGJ/flutter/bin"
