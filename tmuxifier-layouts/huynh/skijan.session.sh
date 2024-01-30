@@ -4,16 +4,14 @@ session_root "$WORKDIR/"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "work-blog-repo"; then
+if initialize_session "person-skijan"; then
 
 	# Create a new window inline within session layout definition.
-	new_window "work-blog-repo"
+	new_window "person-skijan"
 
 	# api skijan
 	# gui-skijan
 	# guard-skijan
-
-	split_h 30
 
 	run_cmd "kp 8920" #guard-skijan
 	run_cmd "kp 8913" #api-skijan
