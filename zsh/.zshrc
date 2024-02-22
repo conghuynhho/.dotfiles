@@ -239,3 +239,12 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # source $pdir/.dotfiles/zsh/nvm.zsh
 source $pdir/.dotfiles/zsh/nvm.zshrc
 source $pdir/.dotfiles/zsh/reveal-aliases.zshrc
+
+PATH=~/.console-ninja/.bin:$PATH
+# pnpm
+export PNPM_HOME="/Users/huynh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
