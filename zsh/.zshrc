@@ -49,6 +49,7 @@ export NVM_DIR="$HOME/.nvm"
 alias gs="git status"
 alias go="git checkout"
 alias opengh="openGithubRepo"
+alias openghb="openGithubBranch"
 
 # gl = git pull
 # gp = git push
@@ -180,6 +181,12 @@ mkdircd() {
 openGithubRepo() {
   local remote=$(git remote -v | grep origin | grep fetch | awk '{print $2}')
   open $remote
+}
+openGithubBranch() {
+  local branch_name="$(git rev-parse --abbrev-ref HEAD)"
+  local remote=$(git remote -v | grep origin | grep fetch | awk '{print $2}')
+  echo "$remote/tree/$branch_name"
+  open "$remote/tree/$branch_name"
 }
 
 ################## End Function ##################
