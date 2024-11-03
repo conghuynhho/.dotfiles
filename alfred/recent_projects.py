@@ -84,7 +84,6 @@ def find_app_data(app):
 def find_recentprojects_file(application):
     preferences_path = os.path.expanduser(preferences_path_or_default(application))
     most_recent_preferences = max(find_preferences_folders(preferences_path, application))
-    print(most_recent_preferences)
     return "{}{}/options/{}.xml".format(preferences_path, most_recent_preferences, "recentProjects")
 
 

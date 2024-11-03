@@ -8,6 +8,7 @@ import sys
 def find_workspaces():
     workspace_storage = os.path.expanduser('~/Library/Application Support/Code/User/workspaceStorage')
     workspace_storage2 = os.path.expanduser('~/Library/Application Support/Code - Insiders/User/workspaceStorage')
+    workspace_storage3 = os.path.expanduser('~/Library/Application Support/Cursor/User/workspaceStorage')
 
     workspaces = []
 
@@ -25,6 +26,17 @@ def find_workspaces():
                             workspaces.append(workspace_folder)
     if os.path.exists(workspace_storage2):
         for root, dirs, files in os.walk(workspace_storage2):
+            for file in files:
+                if file == 'workspace.json':
+                    workspace_file = os.path.join(root, file)
+                    with open(workspace_file, 'r') as f:
+                        workspace_data = json.load(f)
+                        workspace_folder = workspace_data.get('folder')
+                        if workspace_folder:
+                            workspace_folder = workspace_folder.replace('file://', '')
+                            workspaces.append(workspace_folder)
+    if os.path.exists(workspace_storage3):
+        for root, dirs, files in os.walk(workspace_storage3):
             for file in files:
                 if file == 'workspace.json':
                     workspace_file = os.path.join(root, file)
@@ -62,6 +74,6 @@ def main():
     filtered_workspaces = filter_workspaces(workspaces, query)
     json_output = create_json(filtered_workspaces)
     subprocess.run(['echo', json_output], check=True)
-    
+
 if __name__ == '__main__':
     main()
