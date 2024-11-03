@@ -4,6 +4,7 @@
   ps = push
   cl = remote prune origin
   pra = pull --rebase=merges --autostash
+  pop-abort = reset --merge
 
   ## Remove certain file out of pull request to staging/master branch
   rops = !git f && git o origin/staging -- $1

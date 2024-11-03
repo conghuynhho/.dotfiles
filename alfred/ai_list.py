@@ -18,6 +18,17 @@ ai_tools = [
         }
     },
     {
+        'title': 'Vercel AI 0',
+        'subtitle': 'Vercel AI 0',
+        'arg': 'https://v0.dev/chat',
+        'type': 'file',
+        'browser': 'default',
+        'icon': {
+            'path': 'v0.png',
+            'type': 'default'
+        }
+    },
+    {
         'title': 'ChatGPT',
         'subtitle': 'Chat GPT OpenAI',
         'arg': 'https://chat.openai.com/',

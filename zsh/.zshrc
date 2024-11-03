@@ -110,9 +110,9 @@ alias iterm="open -a iTerm ."
 alias codei="code-insiders"
 alias "$"="" # ignore $ sign
 
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    alias la="exa --long --all --group"
+if [ -x "$(command -v eza)" ]; then
+    alias ls="eza"
+    alias la="eza --long --all --group"
 fi
 # MacOS Settings Alias
 alias m-fn="defaults write -g com.apple.keyboard.fnState -bool"
@@ -188,6 +188,10 @@ openGithubBranch() {
   echo "$remote/tree/$branch_name"
   open "$remote/tree/$branch_name"
 }
+nchrome() {
+  # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://localhost:3500
+  open -na "Google Chrome" --args --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=$1
+}
 
 ################## End Function ##################
 
@@ -249,7 +253,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source $pdir/.dotfiles/zsh/nvm.zshrc
 source $pdir/.dotfiles/zsh/reveal-aliases.zshrc
 
-PATH=~/.console-ninja/.bin:$PATH
+
 # pnpm
 export PNPM_HOME="/Users/huynh/Library/pnpm"
 case ":$PATH:" in
@@ -257,3 +261,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+PATH=~/.console-ninja/.bin:$PATH

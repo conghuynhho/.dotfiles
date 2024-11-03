@@ -34,7 +34,7 @@ set number relativenumber
 set idearefactormode=keep
 set selectmode=mouse,key,ideaselection
 set keymodel=startsel
-set showmode
+"set showmodewidget
 
 set ideajoin
 set surround
