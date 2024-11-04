@@ -70,6 +70,8 @@ def create_json(workspaces):
 
 def main():
     workspaces = find_workspaces()
+    # remove duplicates
+    workspaces = list(set(workspaces))
     query = sys.argv[1].strip().lower()
     filtered_workspaces = filter_workspaces(workspaces, query)
     json_output = create_json(filtered_workspaces)
