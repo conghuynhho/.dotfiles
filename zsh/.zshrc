@@ -108,6 +108,7 @@ alias vif="vi \$(fzf)" # open vim through fzf
 alias cfzf="fzf | tr -d '\n' | pbcopy" #copy to clipboard through fzf
 alias iterm="open -a iTerm ."
 alias codei="code-insiders"
+alias tm="tmux"
 alias "$"="" # ignore $ sign
 
 if [ -x "$(command -v eza)" ]; then
@@ -125,7 +126,7 @@ checkport() {
   sudo lsof -i tcp:"$1"
 }
 # kp() {kill -9 $(lsof -ti:$1)}
-cpyp() {
+copypre() {
   # get previous command
   local cmd=$(fc -ln -1 | tail -n 1)
   local output=$(eval "$cmd")
