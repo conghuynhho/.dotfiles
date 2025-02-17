@@ -78,6 +78,7 @@ export PATH="$PATH:/Users/huynh/GGJ/flutter/bin"
 
 # NVM
 export NVM_NODE_PREFIX=""
+# export NODE_OPTIONS=--openssl-legacy-provider
 
 export PATH="$PATH:/usr/local/mongodb/bin"
 
@@ -100,3 +101,4 @@ export PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+

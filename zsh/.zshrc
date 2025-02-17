@@ -245,6 +245,26 @@ cpbranch() {
   echo "$branch_name" | tr -d '\n' | pbcopy
 }
 
+function ggco {
+  # argument 1 is the repository name
+  # argument 2 is the branch name (optional)
+  local repo=$1
+  local user=$USER
+  echo "user: $user"
+
+  if [ -z "$repo" ]; then
+    echo "Usage: greset <repo>"
+    return 1
+  fi
+
+  # Using curl to send request to the server and store the response in the variable
+  # curl -X POST -H 'Content-type: application/json' --data '{"text":"o -m $repo $branch", "token": "UBKQNxsVHvdO5mruCsdwg51m"}' http://hook.gogojungle.net/api/external/v1/git/slack/trigger
+  local url="http://hook.gogojungle.net/api/external/v1/git/slack/trigger"
+  local data="{\"text\":\"or $repo\", \"token\": \"UBKQNxsVHvdO5mruCsdwg51m\", \"user_name\": \"$user\"}"
+  local response=$(curl -X POST -H 'Content-type: application/json' --data "$data" "$url")
+  echo "$response"
+}
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -263,4 +283,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-PATH=~/.console-ninja/.bin:$PATH
+
