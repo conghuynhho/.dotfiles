@@ -10,6 +10,7 @@ export PATH="$PATH:/Users/huynh/Library/Application Support/JetBrains/Toolbox/sc
 eval $(/opt/homebrew/bin/brew shellenv)
 export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
 export PATH="$PATH:/Applications/XAMPP/bin"
+export PATH="$PATH:/Applications/MAMP/bin/php/php8.2.0/bin"
 
 # Personal variable
 export hdir=/Users/huynh/Personal/config.huynh
