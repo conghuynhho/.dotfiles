@@ -7,17 +7,6 @@ import sys
 # AI tools URL list
 ai_tools = [
     {
-        'title': 'Service Space AI',
-        'subtitle': 'Service Space AI',
-        'arg': 'https://ai.servicespace.org/chat/',
-        'type': 'file',
-        'browser': 'default',
-        'icon': {
-            'path': '',
-            'type': 'default'
-        }
-    },
-    {
         'title': 'Vercel AI 0',
         'subtitle': 'Vercel AI 0',
         'arg': 'https://v0.dev/chat',
@@ -40,40 +29,62 @@ ai_tools = [
         }
     },
     {
-        'title': 'Bard AI',
-        'subtitle': 'Bard Google AI',
-        'arg': 'https://bard.google.com/',
+        'title': 'Gemini',
+        'subtitle': 'Gemini Google AI',
+        'arg': 'https://gemini.google.com/app',
         'type': 'file',
         'browser': 'default',
         'icon': {
-            'path': 'bard.png',
+            'path': 'gemini.webp',
             'type': 'default'
         }
     },
     {
-        'title': 'Bing AI',
-        'subtitle': 'Open Bing AI in Edge',
-        'arg': 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx',
+        'title': 'Microsoft Copilot',
+        'subtitle': 'Open Microsoft Copilot in Edge',
+        'arg': 'https://copilot.microsoft.com/chats',
         'type': 'file',
         'browser': 'Microsoft Edge',
         'icon': {
-            'path': 'bing.webp',
+            'path': 'Microsoft-Copilot-Logo.png',
             'type': 'default'
         }
     },
     {
         'title': 'Blackbox AI',
         'subtitle': 'Blackbox AI',
-        'arg': 'https://www.useblackbox.io/chat',
+        'arg': 'https://www.blackbox.ai/',
         'type': 'file',
         'browser': 'default',
         'icon': {
             'path': 'blackbox.png',
             'type': 'default'
         }
+    },
+    {
+        'title': 'Deepseek',
+        'subtitle': 'Deepseek AI',
+        'arg': 'https://chat.deepseek.com/',
+        'type': 'file',
+        'browser': 'default',
+        'icon': {
+            'path': 'deepseek.png',
+            'type': 'default'
+        }
+    },
+    {
+        'title': 'Claude',
+        'subtitle': 'Claude AI',
+        'arg': 'https://claude.ai/',
+        'type': 'file',
+        'browser': 'default',
+        'icon': {
+            'path': 'claude-ai-icon.webp',
+            'type': 'default'
+        }
     }
-
 ]
+
 
 def filter_ai_tools(ai_tools, query):
     # Filter the list of AI tools using the query
