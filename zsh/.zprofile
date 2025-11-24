@@ -3,14 +3,13 @@ source ~/.profile
 emulate zsh
 
 
-
 # Added by Toolbox App
 export PATH="$PATH:/Users/huynh/Library/Application Support/JetBrains/Toolbox/scripts"
 
 eval $(/opt/homebrew/bin/brew shellenv)
 export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
 export PATH="$PATH:/Applications/XAMPP/bin"
-export PATH="$PATH:/Applications/MAMP/bin/php/php8.2.0/bin"
+export PATH="$PATH:/Applications/XAMPP/bin"
 
 # Personal variable
 export hdir=/Users/huynh/Personal/config.huynh
@@ -22,8 +21,8 @@ export dotdir=/Users/huynh/Personal/.dotfiles
 # export TERM=screen-256color
 export TERM=xterm-256color
 # export tmux_dir=/Users/huynh/Personal/.dotfiles/tmux/
-
 # sqlite3
+
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
@@ -37,7 +36,6 @@ export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border --preview "bat -
 
 # Private environment
 source $WORKDIR/.ggj-config/.zprofile_ggj
-# export OPENAI_API_KEY=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
 
 # editor
 export EDITOR=nvim

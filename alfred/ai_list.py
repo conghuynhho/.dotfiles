@@ -82,6 +82,17 @@ ai_tools = [
             'path': 'claude-ai-icon.webp',
             'type': 'default'
         }
+    },
+    {
+        'title': 'Perplexity',
+        'subtitle': 'Perplexity AI',
+        'arg': 'https://www.perplexity.ai/',
+        'type': 'file',
+        'browser': 'default',
+        'icon': {
+            'path': 'perplexity-ai-icon.webp',
+            'type': 'default'
+        }
     }
 ]
 

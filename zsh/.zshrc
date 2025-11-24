@@ -212,7 +212,8 @@ nchrome() {
 source $pdir/private-config/.private.zshrc
 
 #############  GGJ alias ##################
-source $WORKDIR/configs.gogojungle.co.jp/packages/.dotfiles/ggj.zshrc
+# source $WORKDIR/configs.gogojungle.co.jp/packages/.dotfiles/ggj.zshrc
+source $WORKDIR/GGJungle/configs/ggj.zshrc
 
 ############  Utils Function #############
 source $pdir/.dotfiles/zsh/utils-func.zshrc
