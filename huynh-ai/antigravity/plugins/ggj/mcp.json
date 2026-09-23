@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "wiki-mcp": {
+      "type": "http",
+      "url": "https://mcp.ggjungle.com/wiki"
+    },
+    "gitnexus": {
+      "type": "http",
+      "url": "https://mcp.ggjungle.com/gitnexus/ggj/api/mcp"
+    },
+    "gitnexus-sec": {
+      "type": "http",
+      "url": "https://mcp.ggjungle.com/gitnexus/sec/api/mcp"
+    }
+  }
+}

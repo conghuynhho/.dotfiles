@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "gitnexus": {
+      "disabled": true,
+      "serverUrl": "https://mcp.ggjungle.com/gitnexus/ggj/api/mcp"
+    },
+    "gitnexus-sec": {
+      "disabled": true,
+      "serverUrl": "https://mcp.ggjungle.com/gitnexus/sec/api/mcp"
+    },
+    "wiki-mcp": {
+      "disabled": true,
+      "serverUrl": "https://mcp.ggjungle.com/wiki"
+    }
+  }
+}

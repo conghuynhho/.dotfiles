@@ -1,0 +1,12 @@
+{
+  "name": "ggj",
+  "version": "1.0.0",
+  "description": "GGJungle plugin for Cursor",
+  "author": {
+    "name": "GGJungle"
+  },
+  "skills": "./skills-cursor/",
+  "hooks": "./hooks/cursor-hooks.json",
+  "mcpServers": "./mcp.json",
+  "commands": "./commands/ggj-command/"
+}

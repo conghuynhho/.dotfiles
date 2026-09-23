@@ -1,0 +1,8 @@
+{
+  "name": "ggj",
+  "version": "1.0.0",
+  "description": "GGJungle plugin for Claude AI",
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "commands": "./commands/ggj-command/"
+}

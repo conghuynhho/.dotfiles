@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptExpansion": [
+      {
+        "matcher": "ggj:wiki",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/skills/wiki/scripts/validate-argument.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

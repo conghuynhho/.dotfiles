@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "./skills/wiki/scripts/validate-prompt-cursor.sh",
+        "failClosed": false
+      }
+    ]
+  }
+}
