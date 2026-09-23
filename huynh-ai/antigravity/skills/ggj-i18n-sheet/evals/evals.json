@@ -1,0 +1,47 @@
+{
+  "skill_name": "ggj-i18n-sheet",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Dry-run only (do not write to Google Drive). In this mypage repo, look at resources/assetsv1/containers/mypage/display/download/input/input.js — it has a spreadsheet comment URL and imports desktop/sell-input.json. Pretend we just added this hardcoded Japanese label in that file: 「ステップ価格を有効にする」. Follow the ggj-i18n-sheet skill: resolve the sheet, confirm columns, propose a short semantic key + translations for LANG_SUPPORT, show the preview table and the planned $t() replacement. Stop after preview.",
+      "expected_output": "Preview table with short semantic key and all lang columns; spreadsheet/tab resolved to sell-input; no Drive append; planned code replacement shown.",
+      "files": [],
+      "expectations": [
+        "Resolved spreadsheet/tab to desktop sell-input (via URL comment or equivalent spreadsheet id/gid)",
+        "Confirmed header columns include index and LANG_SUPPORT langs ja,en,th,zh,tw,vi,hk",
+        "Preview includes a short semantic kebab-case key (not a long sentence) for ステップ価格を有効にする",
+        "Preview provides non-empty translations for all of ja,en,th,zh,tw,vi,hk",
+        "Shows planned $t()/this.$t() code replacement for the Japanese string",
+        "Explicitly states dry-run / no Drive write (did not append)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Dry-run only. Use git-style change context: file resources/assetsv1/containers/mypage/index/index.js already has a sheets URL comment. Two new hardcoded strings were introduced: 「お知らせはありません」 and 「詳細を見る」. Produce an append preview (keys + JA→all langs) and show how each would become this.$t('…'). Do not write to Drive. Reuse an existing key if the JA text already exists on the target tab.",
+      "expected_output": "Two (or fewer if reuse) preview rows; append-only intent; no sheet mutation; duplicate JA reuse if applicable.",
+      "files": [],
+      "expectations": [
+        "Identifies the target sheet from index.js spreadsheet URL comment",
+        "Addresses both Japanese strings お知らせはありません and 詳細を見る",
+        "Checks existing tab/JA for reuse and documents reuse-or-new decision per string",
+        "Preview (or reuse note) covers all LANG_SUPPORT languages when proposing new rows",
+        "Shows this.$t(...) mapping for each string",
+        "Explicitly states dry-run / no Drive write",
+        "Proposed new keys are short semantic kebab-case (not pure numeric IDs), per skill defaults"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Dry-run. Resolve the i18n workbook/tab for a file that only has `import i18n from '@/i18n/lang/desktop/affiliate-search.json'` and no spreadsheet URL comment. Explain which staging-folder workbook you would open and which tab. Then for hardcoded text 「条件をクリア」, show key + translations preview only.",
+      "expected_output": "Workbook desktop + tab affiliate-search via import path; staging folder resolution mentioned; preview only.",
+      "files": [],
+      "expectations": [
+        "Resolves workbook as desktop from import path @/i18n/lang/desktop/affiliate-search.json",
+        "Resolves tab as affiliate-search",
+        "Mentions staging folder / STAGING_FOLDER (or sheets-cli resolve --workbook) as how to open the Drive file without a URL comment",
+        "Preview for 条件をクリア includes short semantic key and all LANG_SUPPORT translations",
+        "Explicitly states dry-run / no Drive write"
+      ]
+    }
+  ]
+}

@@ -94,7 +94,6 @@ alias drr='docker start "$(docker ps -q -l)"'
 alias dar='docker attach "$(docker ps -q -l)"' # reattach the terminal & stdin"
 
 #### Shortcuts
-alias vi="nvim"
 # alias svi="sudo nvim"
 alias getip="ifconfig | grep 'inet'"
 alias gkeys="cat > /dev/null" # get keystroke for escape sequense.
@@ -102,14 +101,19 @@ alias wifi="sh $hdir/wifi.sh"
 alias checksizeLinux="du -h --max-depth=1"
 alias checksize="du -hcd 1"
 alias checksizeSort="du -hcd 1 | sort -hr"
-alias pn="pnpm"
 alias gs="git status"
 alias vif="vi \$(fzf)" # open vim through fzf
 alias cfzf="fzf | tr -d '\n' | pbcopy" #copy to clipboard through fzf
+alias "$"="" # ignore $ sign
+
+
+#### Quick access Tools
+alias tm="tmux"
 alias iterm="open -a iTerm ."
 alias codei="code-insiders"
-alias tm="tmux"
-alias "$"="" # ignore $ sign
+alias pn="pnpm"
+alias vi="nvim"
+alias cc="claude"
 
 if [ -x "$(command -v eza)" ]; then
     alias ls="eza"
@@ -121,7 +125,7 @@ alias m-fn="defaults write -g com.apple.keyboard.fnState -bool"
 
 ################## Function ##################
 accb() {
-  if [[ $1 == 'gui-mypage-mfe' ]];then
+  if [[ $1 == 'gui-mypage-mfe' || $1 == 'gui-mfe' ]];then
     aws codebuild start-build --project-name ggj-stg-build-$1 --no-cli-pager --environment-variables-override "[{\"name\":\"GOGO_MFE_BUILD_COMPONENTS\",\"value\":\"$2\"}]"
   else
     aws codebuild start-build --project-name ggj-stg-build-$1 --no-cli-pager;fi
@@ -299,3 +303,15 @@ esac
 
 
 PATH=~/.console-ninja/.bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/huynh/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Added by Antigravity
+export PATH="/Users/huynh/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Users/huynh/.local/bin:$PATH"
+export PATH="/Users/huynh/.antigravity-ide/antigravity-ide/bin:$PATH"
+

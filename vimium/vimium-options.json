@@ -1,0 +1,71 @@
+{
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "?gGdrsFoObB0$txXTWpmaA`iuUeEz",
+      "pattern": "https?://github.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://codesandbox.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://github.dev/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://playcode.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://app.eraser.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://codepen.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://leetcode.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://excalidraw.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://hackmd.io/*"
+    },
+    {
+      "passKeys": ">",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "<",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://keytest.vn/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.lust-goddess.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://localhost:8388/*"
+    },
+    {
+      "passKeys": "d",
+      "pattern": "https?://roadmap.sh/*"
+    }
+  ],
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap p\nmap H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward\nmap x LinkHints.activateMode action=hover\nmap x LinkHints.activateMode action=focus\n#map x LinkHints.activateMode action=copy-text",
+  "newTabDestination": "browserNewTabPage",
+  "settingsVersion": "2.4.2"
+}
